@@ -87,12 +87,13 @@ jupyter notebook Dysarthria_Detection.ipynb
 
 ## 🛠 Requirements
 
-- Python 3.9+
-- TensorFlow
-- Keras
+- numpy
+- pandas
 - librosa
 - scikit-learn
-- numpy, pandas, matplotlib
+- tensorflow
+- absl-py
+- keras
 
 ---
 
