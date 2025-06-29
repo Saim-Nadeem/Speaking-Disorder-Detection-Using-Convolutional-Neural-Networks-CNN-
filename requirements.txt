@@ -2,8 +2,8 @@
 
 numpy
 pandas
-matplotlib
-scikit-learn
 librosa
+scikit-learn
 tensorflow
+absl-py
 keras
