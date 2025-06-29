@@ -1,123 +1,110 @@
-🧠 Dysarthria Detection Using Convolutional Neural Networks (CNN)
+# 🧠 Speaking Disorder Detection Using Convolutional Neural Networks (CNN)
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/Framework-TensorFlow-orange.svg)](https://www.tensorflow.org/)
-[![Librosa](https://img.shields.io/badge/Audio%20Processing-Librosa-yellow.svg)](https://librosa.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+# [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
+# [![TensorFlow](https://img.shields.io/badge/Framework-TensorFlow-orange.svg)](https://www.tensorflow.org/)
+# [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> A deep learning-based system for detecting dysarthria (motor speech disorder) from audio recordings using MFCC features and 1D CNNs.
+# > A deep learning solution to identify speaking disorders, specifically **dysarthria**, using **audio feature extraction** and **1D CNNs**.
 
----
+# ---
 
-## 📌 Overview
-This project uses **Convolutional Neural Networks** (CNNs) to identify **dysarthria**, a speech impairment, from `.wav` audio samples.  
-It extracts audio features using **Librosa** and classifies speech as **normal** or **dysarthric** using a supervised learning model.
+# ## 📌 Project Overview
 
----
+# This project detects **dysarthric speech** using **Mel-Frequency Cepstral Coefficients (MFCC)** and other spectral audio features. The model classifies `.wav` files as either **normal** or **disordered** speech with high accuracy.
 
-## 📂 Folder Structure
+# ---
 
-```
-├── All Dys Wav/             # 🧑‍⚕️ Dysarthric speech samples (training)
-├── All Non Dys Wav/         # 🙂 Normal speech samples (training)
-├── Testing Dataset/         # 🧪 Testing speech samples
-├── images/
-│   └── img1.png             # 🖼️ Model diagram or visual
-├── Dysarthria_Detection.ipynb   # 🧠 Jupyter notebook for full training and prediction
-├── README.md                # 📘 This documentation file
-```
+# ## 📂 Folder Structure
 
----
+# ```
+# ├── All Dys Wav/             # 🧑‍⚕️ Dysarthric audio samples (label: 1)
+# ├── All Non Dys Wav/         # 🙂 Normal speech samples (label: 0)
+# ├── Testing Dataset/         # 🧪 Additional unseen test samples
+# ├── images/                  # 🖼️ Contains model diagram and screenshots
+# │   └── img1.png
+# ├── Dysarthria_Detection.ipynb   # 🧠 Main training and evaluation notebook
+# ├── README.md                # 📘 You are here
+# ```
 
-## 🔍 Feature Extraction
+# ---
 
-Features are extracted from `.wav` files using the `librosa` library:
-- 🎙️ MFCC (Mel Frequency Cepstral Coefficients)
-- 🎵 Chroma
-- 📊 Spectral Contrast
-- ✂️ Zero-Crossing Rate
-- 🧠 Tonnetz
+# ## 🔍 Feature Extraction
 
----
+# Speech files are processed using `librosa` to extract:
+# - MFCC (Mel-Frequency Cepstral Coefficients)
+# - Chroma Features
+# - Spectral Contrast
+# - Tonnetz
+# - Zero-Crossing Rate
 
-## 🧠 CNN Model Architecture
+# ---
 
-| Layer           | Description                             |
-|----------------|-----------------------------------------|
-| Conv1D         | Extracts temporal patterns from MFCCs   |
-| MaxPooling1D   | Downsamples feature maps                |
-| Flatten        | Converts output into a dense vector     |
-| Dense          | Fully connected layer                   |
-| Dropout        | Prevents overfitting                    |
-| Softmax        | Outputs probabilities for 2 classes     |
+# ## 🧠 CNN Model Architecture
 
----
+# | Layer Type     | Description                                  |
+# |----------------|----------------------------------------------|
+# | Conv1D         | Extracts patterns from MFCCs                 |
+# | MaxPooling1D   | Downsamples feature maps                     |
+# | Flatten        | Flattens output for dense layers             |
+# | Dense + Dropout| Fully connected layers to prevent overfitting|
+# | Softmax        | Final classification output layer            |
 
-## 🧪 Sample Prediction Output
+# ---
 
-```
-Input File: patient_042.wav
-Prediction: Dysarthric Speech (Class 1)
-Confidence: 91.7%
-```
+# ## 🧪 Sample Output
 
----
+# ```
+# Input: dys_001.wav
+# Predicted Class: 1 (Dysarthric Speech)
+# Confidence: 93.4%
+# ```
 
-## ▶️ How to Run
+# ---
 
-1️⃣ **Clone the Repository**
-```bash
-git clone https://github.com/Saim-Nadeem/Dysarthria-Detection-CNN.git
-cd Dysarthria-Detection-CNN
-```
+# ## ▶️ How to Run
 
-2️⃣ **Install Dependencies**
-```bash
-pip install -r requirements.txt
-```
+# 1️⃣ **Clone the repository**
+# ```bash
+# git clone https://github.com/Saim-Nadeem/Speaking-Disorder-Detection-Using-Convolutional-Neural-Networks-CNN-.git
+# cd Speaking-Disorder-Detection-Using-Convolutional-Neural-Networks-CNN-
+# ```
 
-3️⃣ **Launch Notebook**
-```bash
-jupyter notebook Dysarthria_Detection.ipynb
-```
+# 2️⃣ **Install dependencies**
+# ```bash
+# pip install -r requirements.txt
+# ```
 
-4️⃣ **Upload and Predict**
-- Use the testing cell to classify new `.wav` files from the `Testing Dataset/` folder.
+# 3️⃣ **Launch Jupyter Notebook**
+# ```bash
+# jupyter notebook Dysarthria_Detection.ipynb
+# ```
 
----
+# 4️⃣ **Run all cells**
+# - Upload your test `.wav` files in the **Testing Dataset/** folder
+# - Watch the model predict normal or disordered speech
 
-## 🛠 Technologies Used
+# ---
 
-- 🐍 Python 3.9+
-- 🧠 TensorFlow / Keras
-- 🎧 Librosa
-- 📊 NumPy, Pandas
-- 📉 Scikit-learn (for train/test split, evaluation)
+# ## 🛠 Requirements
 
----
+# - Python 3.9+
+# - TensorFlow
+# - Keras
+# - librosa
+# - scikit-learn
+# - numpy, pandas, matplotlib
 
-## 🔮 Future Work
+# ---
 
-- 🌀 Add LSTM/RNN for sequential modeling
-- 🖼 Convert MFCC to spectrograms for 2D CNN
-- 🌐 Deploy as web service using Flask or Streamlit
+# ## 🖼 Visual Overview
 
----
+# ![Model Visualization](images/img1.png)
 
-## 🖼 Image
+# ---
 
-![Model Overview](images/img1.png)
 
----
+# ## 👤 Author
 
-## 📜 License
-
-This project is licensed under the **MIT License**.  
-See the [LICENSE](LICENSE) file for more details.
-
----
-
-## 👤 Author
-
-**Saim Nadeem**  
-🔗 GitHub: [Saim-Nadeem](https://github.com/Saim-Nadeem)
+# **Saim Nadeem**  
+# 📧 Email: i221884@nu.edu.pk  
+# 🔗 GitHub: [Saim-Nadeem](https://github.com/Saim-Nadeem)
